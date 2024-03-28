@@ -46,7 +46,8 @@
 .loader-text {
     color: #fff;
     background-color: #04192d;
-    font-size: 60px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .loading-bar {
@@ -88,14 +89,13 @@
 .content-title {
     text-align: center;
     margin: 2rem;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
 .container {
-    min-width: 500px;
-    height: auto;
-    padding: 25px 40px 25px 25px;
+    min-width: 300px;
+    padding: 25px 30px 25px 25px;
     border: 2px solid #04192d;
     border-radius: 15px;
 }
@@ -104,18 +104,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px 0;
-    font-size: 24px;
+    margin: 10px 0;
 }
 
 .row p {
     width: 85%;
+    font-size: 16px;
 }
 
 label {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 input {
@@ -143,8 +143,8 @@ label span {
 label span::after {
     content: '';
     position: absolute;
-    left: 24px;
-    bottom: 10px;
+    left: 15px;
+    bottom: 8px;
     width: 0px;
     height: 0px;
     border: solid #04192d;
@@ -155,7 +155,7 @@ label span::after {
 }
 
 input:checked ~ span::after {
-    width: 20px;
-    height: 40px;
+    width: 10px;
+    height: 20px;
     opacity: 1;
 }
