@@ -15,7 +15,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: #DEE5ED;
+    background: #ECEEF8;
     color: #04192d;
     transition: opacity 1s, visibility 1s;
     animation: bg 12s ease infinite;
@@ -57,7 +57,7 @@
     width: 150px;
     height: var(--height-of-loading-bar);
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     position: relative;
 }
 
@@ -91,6 +91,15 @@
     margin: 2rem;
     font-size: 1.5em;
     font-weight: 500;
+}
+
+.content-subtitle {
+    font-style: italic;
+    text-align: center;
+}
+
+.content-subtitle span {
+    color: red;
 }
 
 .container {
@@ -147,7 +156,7 @@ label span::after {
     bottom: 8px;
     width: 0px;
     height: 0px;
-    border: solid #04192d;
+    border: solid red;
     border-width: 0 6px 6px 0;
     transform: rotate(45deg);
     opacity: 0;
@@ -158,4 +167,20 @@ input:checked ~ span::after {
     width: 10px;
     height: 20px;
     opacity: 1;
+}
+
+.btn-result {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(98, 142, 152, 0.2);
+    color: #04192d;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.btn-result:hover {
+    background: red;
+    color: white;
 }
