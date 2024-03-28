@@ -1,5 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.content {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: #DEE5ED;
+    color: #04192d;
+    transition: opacity 1s, visibility 1s;
+    animation: bg 12s ease infinite;
+    font-family: 'poppins', sans-serif;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #04192d;
+    transition: opacity 1s, visibility 1s;
+    font-family: 'Lilita One', sans-serif;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-text {
+    color: #fff;
+    background-color: #04192d;
+    font-size: 60px;
+}
+
+.loading-bar {
+    display: block;
+    --height-of-loading-bar: 6px;
+    --loading-bar-color: #f0ebf8;
+    width: 150px;
+    height: var(--height-of-loading-bar);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.loading-bar::before {
+    content: "";
+    position: absolute;
+    background: var(--loading-bar-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+        right: 0;
+        left: unset;
+    }
+}
+
+/* --------------CONTENT------------------ */
+
+.content-title {
+    text-align: center;
+    margin: 2rem;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.container {
+    min-width: 500px;
+    height: auto;
+    padding: 25px 40px 25px 25px;
+    border: 2px solid #04192d;
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    font-size: 24px;
+}
+
+.row p {
+    width: 85%;
+}
+
+label {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+label span {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 3px solid #04192d;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.content-shown label span {
+    display: block;
+}
+
+
+label span::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    bottom: 10px;
+    width: 0px;
+    height: 0px;
+    border: solid #04192d;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: width 0.5s, height 0.5s, opacity 0.5s;
+}
+
+input:checked ~ span::after {
+    width: 20px;
+    height: 40px;
+    opacity: 1;
 }
