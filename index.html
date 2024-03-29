@@ -19,75 +19,85 @@
             <div class="row">
                 <p>Gossiped about a close friend</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Lied to get out of trouble</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Cheated on a test</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Snuck out of the house</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Peed in public swimming pool</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Ever cheated in a game</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Broken something in anger</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Stolen anything from a store</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Snooped in someone's phone</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
             <div class="row">
                 <p>Been into a fist fight</p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox-input">
                     <span></span>
                 </label>
             </div>
         </div>
         <button class="btn-result">See Results</button>
+    </div>
+
+    <div id="resultPopup" class="popup">
+        <div class="popup-content">
+            <span>You are</span>
+            <span id="evilness"></span>
+            <img src="" alt="Evilness Image" id="evilImage">
+            <p id="message"></p>
+            <button id="closePopupBtn" class="btn-close">Close</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
