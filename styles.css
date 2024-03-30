@@ -188,7 +188,7 @@
 }
 
 .container {
-    min-width: 500px;
+    width: 500px;
     padding: 5px 40px 5px 30px;
     border: 2px solid #fbca1f;
     border-radius: 15px;
@@ -277,9 +277,6 @@ input:checked ~ span::after {
     opacity: 1;
 }
 
-input:checked ~ .container {
-    background: #960018;
-}
 
 .btn-result {
     background: #fbca1f;
@@ -303,6 +300,22 @@ input:checked ~ .container {
 .btn-result:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
+}
+
+@media (max-width: 600px) {
+    .content {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .container-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .container {
+        width: 350px;
+    }
 }
 
 /* ---------------------POPUP----------------- */
