@@ -303,6 +303,9 @@ input:checked ~ span::after {
 }
 
 @media (max-width: 600px) {
+    .loader-content {
+        font-size: 20px;
+    }
     .content {
         height: auto;
         padding-bottom: 50px;
