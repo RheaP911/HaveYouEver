@@ -1,26 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&family=Russo+One&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; */
 }
 
 .content {
     display: none;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: #ECEEF8;
-    color: #04192d;
-    transition: opacity 1s, visibility 1s;
-    animation: bg 12s ease infinite;
+    background: #171717;
+    color: #fbca1f;
+    transition: opacity 2s, visibility 2s;
     font-family: 'poppins', sans-serif;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
 }
+
+
+/* ------------------LOADER-------------- */
 
 .loader {
     position: fixed;
@@ -32,56 +37,122 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    background-color: #04192d;
-    transition: opacity 1s, visibility 1s;
-    font-family: 'Lilita One', sans-serif;
+    background-color: #fbca1f;
+    transition: opacity 2s, visibility 2s;
 }
 
-.loader--hidden {
-    opacity: 0;
-    visibility: hidden;
+.loader-content {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
+    animation: l24 1s infinite alternate linear;
+    font-family: 'Press Start 2P', sans-serif;
+}
+  
+.loader-content::before {
+    content: "HAVE YOU EVER?";
+    line-height: 1.5em;
+    color: #0000;
+    background: inherit;
+    background-image: radial-gradient(circle closest-side,#fff 95%,#000);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
-.loader-text {
-    color: #fff;
-    background-color: #04192d;
-    font-size: 40px;
-    text-align: center;
-}
-
-.loading-bar {
-    display: block;
-    --height-of-loading-bar: 6px;
-    --loading-bar-color: #f0ebf8;
-    width: 150px;
-    height: var(--height-of-loading-bar);
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
-    position: relative;
-}
-
-.loading-bar::before {
-    content: "";
-    position: absolute;
-    background: var(--loading-bar-color);
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    border-radius: 30px;
-    animation: moving 1s ease-in-out infinite;
-}
-
-@keyframes moving {
-    50% {
-        width: 100%;
-    }
+@keyframes l24 {
     100% {
-        width: 0;
-        right: 0;
-        left: unset;
+        background-position: left
     }
+}
+
+
+/* ---------------- BACKGROUND ----------- */
+
+.bx {
+    position: absolute;
+    transition: opacity 2s, visibility 2s;
+}
+
+.icon1 {
+    font-size: 500px;
+    top: 10%;
+    left: 10%;
+    color: rgba(255, 0, 0, 0.5); /* Red with 50% opacity */
+    transform: rotate(10deg); /* Rotate by 10 degrees */
+}
+
+.icon2 {
+    font-size: 70px;
+    top: 50%;
+    left: 30%;
+    color: rgba(0, 255, 0, 0.5); /* Green with 50% opacity */
+    transform: rotate(20deg); /* Rotate by 20 degrees */
+}
+
+.icon3 {
+    font-size: 90px;
+    top: 30%;
+    left: 50%;
+    color: rgba(0, 0, 255, 0.5); /* Blue with 50% opacity */
+    transform: rotate(30deg); /* Rotate by 30 degrees */
+}
+
+.icon4 {
+    font-size: 110px;
+    top: 40%;
+    left: 70%;
+    color: rgba(255, 255, 0, 0.5); /* Yellow with 50% opacity */
+    transform: rotate(40deg); /* Rotate by 40 degrees */
+}
+
+.icon5{
+    font-size: 300px;
+    top: 55%;
+    left: 70%;
+    color: rgba(255, 0, 255, 0.5); /* Magenta with 50% opacity */
+    transform: rotate(50deg); /* Rotate by 50 degrees */
+}
+
+.icon6 {
+    font-size: 150px;
+    top: 70%;
+    left: 5%;
+    color: rgba(0, 255, 255, 0.5); /* Cyan with 50% opacity */
+    transform: rotate(60deg); /* Rotate by 60 degrees */
+}
+
+.icon7 {
+    font-size: 170px;
+    top: 10%;
+    left: 0%;
+    color: rgba(255, 128, 0, 0.5); /* Orange with 50% opacity */
+    transform: rotate(70deg); /* Rotate by 70 degrees */
+}
+
+.icon8 {
+    font-size: 310px;
+    top: 60%;
+    left: 35%;
+    color: rgba(128, 0, 255, 0.5); /* Purple with 50% opacity */
+    transform: rotate(80deg); 
+}
+
+.icon9 {
+    font-size: 250px;
+    top: 18%;
+    left: 78%;
+    color: rgba(0, 255, 128, 0.5);
+    transform: rotate(90deg); 
+}
+
+.icon10 {
+    font-size: 230px;
+    top: 80%;
+    left: 90%;
+    color: rgba(255, 0, 128, 0.5); 
+    transform: rotate(100deg);
 }
 
 /* --------------CONTENT------------------ */
@@ -91,23 +162,54 @@
     margin: 2rem;
     font-size: 1.5em;
     font-weight: 500;
+    font-family: 'Press Start 2P', sans-serif;
+    z-index: 10;
+}
+
+
+.content-title span {
+    color: red;
 }
 
 .content-subtitle {
     font-style: italic;
     text-align: center;
+    margin-bottom: 1em;
+    font-size: 20px;
+    z-index: 10;
 }
 
-.content-subtitle span {
-    color: red;
+.container-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2em;
+    z-index: 10;
 }
 
 .container {
-    min-width: 300px;
-    padding: 25px 30px 25px 25px;
-    border: 2px solid #04192d;
+    min-width: 500px;
+    padding: 5px 40px 5px 30px;
+    border: 2px solid #fbca1f;
     border-radius: 15px;
+    box-shadow: 0.2em 0.2em;
+    margin-bottom: 1em;
+    background: #171717;
+    cursor: pointer;
 }
+
+.container:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background: #960018;
+    color: white;
+}
+
+.container:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
 
 .row {
     display: flex;
@@ -139,9 +241,15 @@ label span {
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 3px solid #04192d;
-    border-radius: 6px;
+    border: 3px solid #fbca1f;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
     cursor: pointer;
+}
+
+label span:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
 }
 
 .content-shown label span {
@@ -156,7 +264,7 @@ label span::after {
     bottom: 8px;
     width: 0px;
     height: 0px;
-    border: solid red;
+    border: solid white;
     border-width: 0 6px 6px 0;
     transform: rotate(45deg);
     opacity: 0;
@@ -169,20 +277,32 @@ input:checked ~ span::after {
     opacity: 1;
 }
 
+input:checked ~ .container {
+    background: #960018;
+}
+
 .btn-result {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(98, 142, 152, 0.2);
-    color: #04192d;
+    background: #fbca1f;
+    font-family: inherit;
+    padding: 8px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
     cursor: pointer;
-    transition-duration: 0.5s;
+    margin-top: 0.5em;
+    z-index: 10;
 }
 
 .btn-result:hover {
-    background: red;
-    color: white;
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.btn-result:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
 }
 
 /* ---------------------POPUP----------------- */
@@ -195,7 +315,7 @@ input:checked ~ span::after {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    z-index: 100;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -233,7 +353,9 @@ input:checked ~ span::after {
 
 #evilness {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: "Creepster", sans-serif;
+    letter-spacing: 2px;
 }
 
 .evilness-the-devil {
@@ -246,6 +368,8 @@ input:checked ~ span::after {
 
 .evilness-not-so-evil {
     color: blue;
+    font-family: 'poppins', sans-serif;
+
 }
 
 

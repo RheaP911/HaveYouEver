@@ -1,20 +1,27 @@
 window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
+  const loader = document.querySelector(".loader-sec");
   const content = document.querySelector(".content");
   const btnResult = document.querySelector(".btn-result");
   const resultPopup = document.querySelector("#resultPopup");
   const closePopupBtn = document.querySelector("#closePopupBtn");
   const evilImage = document.querySelector("#evilImage");
 
+  // Loader Timeout
   setTimeout(() => {
-      loader.classList.add("loader--hidden");
-      content.classList.add("content-shown");
-  }, 1500);
+    loader.style.display = "none";
+    content.style.display = "flex";
+    
+    setTimeout(() => {
+        content.classList.add("content-shown");
+    }, 100);
+  }, 2000);
 
-  loader.addEventListener("transitionend", () => {
-      loader.parentNode.removeChild(loader); 
-  });
+  // For container when clicked
+  
 
+
+
+  // Evilness Result
   btnResult.addEventListener("click", () => {
     const checkboxes = document.querySelectorAll(".checkbox-input");
     let score = 0;
@@ -39,7 +46,6 @@ window.addEventListener("load", () => {
       imagePath = "resources/not-so-evil.png";
     }
 
-    // Inside the btnResult event listener
     const evilnessSpan = document.querySelector("#evilness");
     evilnessSpan.textContent = `${evilnessLevel}`;
     evilnessSpan.className = `evilness-${evilnessLevel.toLowerCase().replace(/\s/g, '-')}`;
