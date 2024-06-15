@@ -1,5 +1,8 @@
+/* Poppins */
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+/* Lilita One */
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+/* Creepster */
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&family=Russo+One&display=swap');
 
 *{
@@ -9,6 +12,17 @@
     /* overflow: hidden; */
 }
 
+:root {
+    --poppins: 'poppins', sans-serif;
+    --press-start: 'Press Start 2P', sans-serif;
+    --creepster: 'Creepster', sans-serif;
+
+    --yellow: #fbca1f;
+    --black: #0000;
+    --medium-black: #171717;
+    --red: #960018;
+}
+
 .content {
     display: none;
     flex-direction: column;
@@ -16,10 +30,10 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: #171717;
-    color: #fbca1f;
+    background: var(--medium-black);
+    color: var(--yellow);
     transition: opacity 2s, visibility 2s;
-    font-family: 'poppins', sans-serif;
+    font-family: var(--poppins);
     backdrop-filter: blur(5px);
     overflow: hidden;
 }
@@ -37,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fbca1f;
+    background-color: var(--yellow);
     transition: opacity 2s, visibility 2s;
 }
 
@@ -48,7 +62,7 @@
     font-size: 30px;
     background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
     animation: l24 1s infinite alternate linear;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: var(--press-start);
 }
   
 .loader-content::before {
@@ -162,7 +176,7 @@
     margin: 2rem;
     font-size: 1.5em;
     font-weight: 500;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: var(--press-start);
     z-index: 10;
 }
 
@@ -190,18 +204,18 @@
 .container {
     width: 500px;
     padding: 5px 40px 5px 30px;
-    border: 2px solid #fbca1f;
+    border: 2px solid var(--yellow);
     border-radius: 15px;
     box-shadow: 0.2em 0.2em;
     margin-bottom: 1em;
-    background: #171717;
+    background: var(--medium-black);
     cursor: pointer;
 }
 
 .container:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
-    background: #960018;
+    background: var(--red);
     color: white;
 }
 
@@ -241,7 +255,7 @@ label span {
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 3px solid #fbca1f;
+    border: 3px solid var(--yellow);
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
     cursor: pointer;
@@ -279,7 +293,7 @@ input:checked ~ span::after {
 
 
 .btn-result {
-    background: #fbca1f;
+    background: var(--yellow);
     font-family: inherit;
     padding: 8px 15px;
     font-weight: 600;
@@ -328,11 +342,15 @@ input:checked ~ span::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    transform: translate(2.5%, 2.5%);
+    width: 95vw;
+    height: 95vh;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    background-color: var(--medium-black);
     z-index: 100;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .popup-content {
@@ -345,7 +363,7 @@ input:checked ~ span::after {
     border: 3px solid black;
     border-radius: 10px;
     text-align: center;
-    font-family: 'poppins', sans-serif;
+    font-family: var(--poppins);
 }
 
 .popup-the-devil {
@@ -370,7 +388,7 @@ input:checked ~ span::after {
 #evilness {
     font-size: 28px;
     font-weight: 400;
-    font-family: "Creepster", sans-serif;
+    font-family: var(--creepster);
     letter-spacing: 2px;
 }
 
@@ -384,7 +402,7 @@ input:checked ~ span::after {
 
 .evilness-not-so-evil {
     color: blue;
-    font-family: 'poppins', sans-serif;
+    font-family: var(--poppins);
 
 }
 
